@@ -27,6 +27,8 @@
 
 - (void)stopToasting;
 
+- (BOOL)isActive;
+
 @end
 
 ///

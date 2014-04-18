@@ -90,6 +90,10 @@ static NSInteger _nextToastID = 0;
     }
 }
 
+- (BOOL)isActive {
+    return [self.timeoutTimer isValid];
+}
+
 #pragma mark - Events
 
 - (void)timeoutTimerFired:(NSTimer *)timer {

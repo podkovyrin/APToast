@@ -72,7 +72,7 @@ static NSTimeInterval _apToasterAnimationDuration = 0.2f;
         }
     }
     
-    if (toastToEject) {
+    if (toastToEject && [toastToEject isActive]) {
         [toastToEject stopToasting];
         [self hideToast:toastToEject];
     }
