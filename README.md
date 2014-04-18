@@ -1,6 +1,5 @@
 # APToast
 =======
-
 ## A UIView category to provide rich toast notifications.
 
 APToast can display one or more toast notifications queued one by one, by providing NSString objects or custom UIView as toast. With the ability to dismiss toast.
