@@ -16,6 +16,7 @@
 + (CGFloat)ap_toastMaxHeightPercent;
 + (CGFloat)ap_toastHorizontalPadding;
 + (CGFloat)ap_toastVerticalPadding;
++ (CGFloat)ap_toastMinHeight;
 + (CGFloat)ap_toastCornerRadius;
 + (CGFloat)ap_toastOpacity;
 + (UIFont *)ap_toastFont;

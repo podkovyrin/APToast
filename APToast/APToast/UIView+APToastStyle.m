@@ -18,7 +18,11 @@
 }
 
 + (CGFloat)ap_toastVerticalPadding {
-    return 11.f;
+    return 6.f;
+}
+
++ (CGFloat)ap_toastMinHeight {
+    return 40.f;
 }
 
 + (CGFloat)ap_toastCornerRadius {
@@ -38,7 +42,7 @@
 }
 
 + (NSTimeInterval)ap_toastDuration {
-    return 3.f;
+    return 2.f;
 }
 
 + (BOOL)ap_toastTapToComplete {

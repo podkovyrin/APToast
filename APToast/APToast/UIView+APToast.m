@@ -32,7 +32,7 @@
     if (!toastText.length) {
         return NSNotFound;
     }
-
+    
     UIView *toastView = [self ap_toastViewForText:toastText];
     CGPoint center = [self ap_centerPointForPosition:position toastView:toastView];
     return [self ap_makeToastView:toastView duration:duration center:center tapToComplete:[[self class] ap_toastTapToComplete] completion:completion];
@@ -111,11 +111,11 @@
     CGFloat toastViewWidth = CGRectGetWidth(self.bounds) - horizontalPadding;
     CGSize maxTextSize = CGSizeMake(toastViewWidth - horizontalPadding, CGRectGetHeight(self.bounds) * [[self class] ap_toastMaxHeightPercent]);
     CGSize textSize = [textLabel.text ap_toastSizeWithFont:textLabel.font constrainedToSize:maxTextSize lineBreakMode:textLabel.lineBreakMode];
-    CGFloat toastViewHeight = textSize.height + [[self class] ap_toastVerticalPadding] * 2;
+    CGFloat toastViewHeight = MAX(textSize.height + [[self class] ap_toastVerticalPadding] * 2, [[self class] ap_toastMinHeight]);
     
     toastView.frame = CGRectMake(0.f, 0.f, toastViewWidth, toastViewHeight);
     textLabel.frame = toastView.bounds;
-
+    
     return toastView;
 }
 
