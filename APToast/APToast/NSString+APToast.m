@@ -27,7 +27,7 @@
         return CGSizeZero;
     } else {
 #if defined(__LP64__) && __LP64__
-        return CGSizeMake(ceil(s.width), ceil(s.height));
+        return CGSizeMake(ceil(size.width), ceil(size.height));
 #else
         return CGSizeMake(ceilf(size.width), ceilf(size.height));
 #endif
