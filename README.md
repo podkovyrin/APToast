@@ -17,7 +17,7 @@ APToast can display one or more toast notifications queued one by one, by provid
 ## Usage
 **Via [CocoaPods](http://cocoapods.org):**
 ```
-pod 'APToast', :git => 'https://github.com/podkovyin/APToast.git'
+pod 'APToast', :git => 'https://github.com/podkovyrin/APToast.git'
 ```
 
 **Sample:**

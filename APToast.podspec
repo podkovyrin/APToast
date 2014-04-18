@@ -5,10 +5,10 @@ Pod::Spec.new do |s|
   s.description  = 'APToast can display one or more toast notifications ' \
                    'queued one by one, by providing NSString objects or custom UIView as toast. '
                    'With the ability to dismiss toast. '
-  s.homepage     = "https://github.com/podkovyin/APToast"
+  s.homepage     = "https://github.com/podkovyrin/APToast"
   s.license      = 'MIT'
   s.author       = { "Andrew Podkovyrin" => "podkovyin@gmail.com" }
-  s.source       = { :git => "https://github.com/podkovyin/APToast.git", :tag => "1.0" }
+  s.source       = { :git => "https://github.com/podkovyrin/APToast.git", :tag => "1.0" }
   s.platform     = :ios
   s.source_files = 'APToast/APToast/*.{h,m}'
   s.requires_arc = true
