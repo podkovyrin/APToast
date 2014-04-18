@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.license      = 'MIT'
   s.author       = { "Andrew Podkovyrin" => "podkovyin@gmail.com" }
   s.source       = { :git => "https://github.com/podkovyrin/APToast.git", :tag => "1.0" }
-  s.platform     = :ios
+  s.platform     = :ios, '6.0'
   s.source_files = 'APToast/APToast/*.{h,m}'
   s.requires_arc = true
   s.framework    = 'QuartzCore'
