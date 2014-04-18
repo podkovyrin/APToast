@@ -12,6 +12,7 @@ APToast can display one or more toast notifications queued one by one, by provid
  - Dismiss toast by toastID
  - Present in bottom, top or center of parent view
  - Present in custom CGPoint
+ - Customizable UI
  
 
 ## Usage
