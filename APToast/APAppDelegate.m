@@ -7,12 +7,19 @@
 //
 
 #import "APAppDelegate.h"
+#import "APToastExampleViewController.h"
 
 @implementation APAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    APToastExampleViewController *toastExampleViewController = [[APToastExampleViewController alloc] init];
+    self.window.rootViewController = toastExampleViewController;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							

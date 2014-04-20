@@ -2,52 +2,60 @@
 
 ## A UIView category to provide rich toast notifications.
 
-APToast can display one or more toast notifications queued one by one, by providing NSString objects or custom UIView as toast. With the ability to dismiss toast.
+APToast can display one or more toast notifications queued one by one. Toasts can be `NSString` objects or custom `UIView` class. After creating toast can be manually ejected.
 
+<img src="https://raw.github.com/podkovyrin/APToast/master/demo.gif" alt="APToast" title="APToast demo" style="display:block; margin: 10px auto 30px auto; align:center"/>
 
 ## Features
- - Tap to dismiss
+ - Tap on toast to dismiss
  - Custom view as toast
  - Queueing toasts one by one
  - Dismiss toast by toastID
- - Present in bottom, top or center of parent view
- - Present in custom CGPoint
- - Customizable UI
+ - Present in bottom, top or center of receiver view
+ - Present in `CGPoint`-center of receiver view
+ - Customizable UI (globally)
+ - Device rotation not supported (by now ;))
  
 
 ## Usage
-**Via [CocoaPods](http://cocoapods.org):**
+ - **[CocoaPods](http://cocoapods.org):**
 ```
-pod 'APToast', :git => 'https://github.com/podkovyrin/APToast.git'
+pod 'APToast'
 ```
+ - **Manual:**
+Copy `APToast/APToast` folder anywhere to your project and add it to XCode.
 
-**Sample:**
+##Sample
+
 ```obj-c
 #import <APToast/UIView+APToast.h>
 
-[self.view ap_makeToast:@"Test toast message 123" duration:2.5f];
+// make toast
+NSInteger toastID = [self.view ap_makeToast:@"Simple toast message"];
+// eject later if needed:
+[self.view ap_ejectToast:toastID];
 
-// or
+
+// custom toast view
 UIView *customToastView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, 280, 44)];
 customToastView.backgroundColor = [UIColor greenColor];
 
 [self.view ap_makeToastView:customToastView duration:4.f position:APToastPositionCenter];
-
 ```
 
+For advanced used see `APToastExampleViewController`. Other parameters is described in `UIView+APToast.h`.
 
 ## Compatibility
 iOS 6.0 or later.
 
-
 ## Notes
-
 Inspired by https://github.com/scalessec/Toast and https://github.com/intuit/LocationManager
 
+## License
 
-## MIT License
+APToast is available under the MIT license.
 
-Copyright (c) 2014 Andrew Podkovyrin
+Copyright © 2014 Andrew Podkovyrin
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

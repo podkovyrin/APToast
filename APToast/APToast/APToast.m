@@ -94,6 +94,10 @@ static NSInteger _nextToastID = 0;
     return [self.timeoutTimer isValid];
 }
 
+- (BOOL)isStarted {
+    return (self.timeoutTimer != nil);
+}
+
 #pragma mark - Events
 
 - (void)timeoutTimerFired:(NSTimer *)timer {

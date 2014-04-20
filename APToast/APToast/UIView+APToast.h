@@ -13,63 +13,68 @@ typedef NS_ENUM(NSInteger, APToastPosition) {
     APToastPositionTop,
 };
 
-
+/**
+ *  This category adds methods to the `UIView` class. The methods in this category provide ability for making toast-like notifications.
+ */
 @interface UIView (APToast)
 
-/// Text toast
+///------------------------------------------------
+/// @name Make text toast
+///------------------------------------------------
 
 /**
- *  Show simple text toast with default position and duration
+ *  Make simple toast with `toastText` with default position and duration.
  *
- *  @param toastText  toast text
+ *  @param toastText  The toast text
+ *  @param duration   Toasting `duration`
  *
- *  @return unique toastID or NSNotFound
+ *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
 - (NSInteger)ap_makeToast:(NSString *)toastText;
 
 /**
- *  Show simple text toast with default position
+ *  Make simple toast with `toastText` with default position.
  *
- *  @param toastText  toast text
- *  @param duration   showing duration
+ *  @param toastText  The toast text
+ *  @param duration   Toasting `duration`
  *
- *  @return unique toastID or NSNotFound
+ *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
 - (NSInteger)ap_makeToast:(NSString *)toastText duration:(NSTimeInterval)duration;
 
 /**
- *  Show simple text toast
+ *  Make simple toast with `toastText`.
  *
- *  @param toastText  toast text
- *  @param duration   showing duration
- *  @param position   toast position on parent view
+ *  @param toastText  The toast text
+ *  @param duration   Toasting `duration`
+ *  @param position   Toast position on receiver view
  *
- *  @return unique toastID or NSNotFound
+ *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
 - (NSInteger)ap_makeToast:(NSString *)toastText duration:(NSTimeInterval)duration position:(APToastPosition)position;
 
 /**
- *  Show simple text toast
+ *  Make simple toast with `toastText`.
  *
- *  @param toastText  toast text
- *  @param duration   showing duration
- *  @param position   toast position on parent view
- *  @param completion block to execute when toast did hide
+ *  @param toastText  The toast text
+ *  @param duration   Toasting `duration`
+ *  @param position   Toast position on receiver view
+ *  @param completion The block to execute when toasting completes
  *
- *  @return unique toastID or NSNotFound
+ *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
 - (NSInteger)ap_makeToast:(NSString *)toastText duration:(NSTimeInterval)duration position:(APToastPosition)position completion:(void (^)())completion;
 
 /**
- *  Show simple text toast
+ *  Make simple toast with `toastText`.
  *
- *  @param toastText     toast text
- *  @param duration      showing duration
- *  @param center        center of displaying toast view
- *  @param tapToComplete should hide toast by tap
- *  @param completion    block to execute when toast did hide
+ *  @param toastText     The toast text
+ *  @param duration      Toasting `duration`
+ *  @param center        Center of displaying `toastView`
+ *  @param tapToComplete Should eject toast by touching it
+ *  @param completion    The block to execute when toasting completes
  *
- *  @return unique toastID or NSNotFound
+ *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
 - (NSInteger)ap_makeToast:(NSString *)toastText
                  duration:(NSTimeInterval)duration
@@ -77,48 +82,55 @@ typedef NS_ENUM(NSInteger, APToastPosition) {
             tapToComplete:(BOOL)tapToComplete
                completion:(void (^)())completion;
 
-/// View toast
+///------------------------------------------------
+/// @name Make custom view toast
+///------------------------------------------------
 
 /**
- *  Show view as toast with default position and duration
+ *  Make toast with `toastView` with default position and duration.
+ *  `toastView` adds to receiver view as subview with fade in animation.
  *
- *  @param toastView     toast view to show
+ *  @param toastView     The view for toasting
  *
- *  @return unique toastID or NSNotFound
+ *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
 - (NSInteger)ap_makeToastView:(UIView *)toastView;
 
 /**
- *  Show view as toast with default position
+ *  Make toast with `toastView` with default position.
+ *  `toastView` adds to receiver view as subview with fade in animation.
  *
- *  @param toastView     toast view to show
- *  @param duration      showing duration
+ *  @param toastView     The view for toasting
+ *  @param duration      Toasting `duration`
  *
- *  @return unique toastID or NSNotFound
+ *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
 - (NSInteger)ap_showToastView:(UIView *)toastView duration:(NSTimeInterval)duration;
 
 /**
- *  Show view as toast
+ *  Make toast with `toastView`.
+ *  `toastView` adds to receiver view as subview with fade in animation.
  *
- *  @param toastView     toast view to show
- *  @param duration      showing duration
- *  @param position      toast position on parent view
+ *  @param toastView     The view for toasting
+ *  @param duration      Toasting `duration`
+ *  @param position      Toast position on receiver view
  *
- *  @return unique toastID or NSNotFound
+ *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
 - (NSInteger)ap_makeToastView:(UIView *)toastView duration:(NSTimeInterval)duration position:(APToastPosition)position;
 
 /**
- *  Show view as toast
+ *  Make toast with `toastView`.
+ *  `toastView` adds to receiver view as subview with fade in animation.
+ *  `completion` block executes even if toast is forced ejected.
  *
- *  @param toastView     toast view to show
- *  @param duration      showing duration
- *  @param center        center of displaying toast view
- *  @param tapToComplete should hide toast by tap
- *  @param completion    block to execute when toast did hide
+ *  @param toastView     The view for toasting
+ *  @param duration      Toasting `duration`
+ *  @param center        Center of displaying `toastView`
+ *  @param tapToComplete Should eject toast by touching it
+ *  @param completion    The block to execute when toasting completes
  *
- *  @return unique toastID or NSNotFound
+ *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
 - (NSInteger)ap_makeToastView:(UIView *)toastView
                      duration:(NSTimeInterval)duration
@@ -126,13 +138,22 @@ typedef NS_ENUM(NSInteger, APToastPosition) {
                 tapToComplete:(BOOL)tapToComplete
                    completion:(void (^)())completion;
 
-/// Eject
+///------------------------------------------------
+/// @name Eject toast
+///------------------------------------------------
 
 /**
- *  Hide toast by toastID
- *
- *  @param toastID
+ *  Animated ejects toast with specified `toastID` (if it exists) from toasting
  */
 - (void)ap_ejectToast:(NSInteger)toastID;
+
+/**
+ *  Ejects toast with specified `toastID` (if it exists) from toasting.
+ */
+
+/**
+ *  Ejects toast with specified `toastID` (if it exists) from toasting.
+ */
+- (void)ap_ejectToast:(NSInteger)toastID animated:(BOOL)animated;
 
 @end

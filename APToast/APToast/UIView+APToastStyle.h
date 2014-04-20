@@ -8,9 +8,8 @@
 #import <UIKit/UIKit.h>
 
 /**
- *  Default text-toast style
+ *  Default text-toast styles
  */
-
 @interface UIView (APToastStyle)
 
 + (CGFloat)ap_toastMaxHeightPercent;

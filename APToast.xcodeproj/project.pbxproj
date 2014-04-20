@@ -12,14 +12,13 @@
 		2A1F577C190179490024AB16 /* NSString+APToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F5774190179490024AB16 /* NSString+APToast.m */; };
 		2A1F577D190179490024AB16 /* UIView+APToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F5776190179490024AB16 /* UIView+APToast.m */; };
 		2A1F577F190179490024AB16 /* UIView+APToastStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F5779190179490024AB16 /* UIView+APToastStyle.m */; };
+		2A1F57821902994F0024AB16 /* APToastExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1F57811902994F0024AB16 /* APToastExampleViewController.m */; };
 		2A920BCD18EDA2FD00C7CEE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A920BCC18EDA2FD00C7CEE7 /* Foundation.framework */; };
 		2A920BCF18EDA2FD00C7CEE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A920BCE18EDA2FD00C7CEE7 /* CoreGraphics.framework */; };
 		2A920BD118EDA2FD00C7CEE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A920BD018EDA2FD00C7CEE7 /* UIKit.framework */; };
 		2A920BD718EDA2FD00C7CEE7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A920BD518EDA2FD00C7CEE7 /* InfoPlist.strings */; };
 		2A920BD918EDA2FD00C7CEE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A920BD818EDA2FD00C7CEE7 /* main.m */; };
 		2A920BDD18EDA2FD00C7CEE7 /* APAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A920BDC18EDA2FD00C7CEE7 /* APAppDelegate.m */; };
-		2A920BE018EDA2FD00C7CEE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A920BDE18EDA2FD00C7CEE7 /* Main.storyboard */; };
-		2A920BE318EDA2FD00C7CEE7 /* APViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A920BE218EDA2FD00C7CEE7 /* APViewController.m */; };
 		2A920BE518EDA2FD00C7CEE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A920BE418EDA2FD00C7CEE7 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +33,8 @@
 		2A1F5776190179490024AB16 /* UIView+APToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+APToast.m"; sourceTree = "<group>"; };
 		2A1F5778190179490024AB16 /* UIView+APToastStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+APToastStyle.h"; sourceTree = "<group>"; };
 		2A1F5779190179490024AB16 /* UIView+APToastStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+APToastStyle.m"; sourceTree = "<group>"; };
+		2A1F57801902994F0024AB16 /* APToastExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APToastExampleViewController.h; sourceTree = "<group>"; };
+		2A1F57811902994F0024AB16 /* APToastExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APToastExampleViewController.m; sourceTree = "<group>"; };
 		2A920BC918EDA2FD00C7CEE7 /* APToast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APToast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A920BCC18EDA2FD00C7CEE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2A920BCE18EDA2FD00C7CEE7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -44,9 +45,6 @@
 		2A920BDA18EDA2FD00C7CEE7 /* APToast-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APToast-Prefix.pch"; sourceTree = "<group>"; };
 		2A920BDB18EDA2FD00C7CEE7 /* APAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APAppDelegate.h; sourceTree = "<group>"; };
 		2A920BDC18EDA2FD00C7CEE7 /* APAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APAppDelegate.m; sourceTree = "<group>"; };
-		2A920BDF18EDA2FD00C7CEE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2A920BE118EDA2FD00C7CEE7 /* APViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APViewController.h; sourceTree = "<group>"; };
-		2A920BE218EDA2FD00C7CEE7 /* APViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APViewController.m; sourceTree = "<group>"; };
 		2A920BE418EDA2FD00C7CEE7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2A920BEB18EDA2FE00C7CEE7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -116,9 +114,8 @@
 				2A1F576E190179490024AB16 /* APToast */,
 				2A920BDB18EDA2FD00C7CEE7 /* APAppDelegate.h */,
 				2A920BDC18EDA2FD00C7CEE7 /* APAppDelegate.m */,
-				2A920BDE18EDA2FD00C7CEE7 /* Main.storyboard */,
-				2A920BE118EDA2FD00C7CEE7 /* APViewController.h */,
-				2A920BE218EDA2FD00C7CEE7 /* APViewController.m */,
+				2A1F57801902994F0024AB16 /* APToastExampleViewController.h */,
+				2A1F57811902994F0024AB16 /* APToastExampleViewController.m */,
 				2A920BE418EDA2FD00C7CEE7 /* Images.xcassets */,
 				2A920BD318EDA2FD00C7CEE7 /* Supporting Files */,
 			);
@@ -191,7 +188,6 @@
 			files = (
 				2A920BE518EDA2FD00C7CEE7 /* Images.xcassets in Resources */,
 				2A920BD718EDA2FD00C7CEE7 /* InfoPlist.strings in Resources */,
-				2A920BE018EDA2FD00C7CEE7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +202,7 @@
 				2A1F577F190179490024AB16 /* UIView+APToastStyle.m in Sources */,
 				2A1F577A190179490024AB16 /* APToast.m in Sources */,
 				2A920BD918EDA2FD00C7CEE7 /* main.m in Sources */,
-				2A920BE318EDA2FD00C7CEE7 /* APViewController.m in Sources */,
+				2A1F57821902994F0024AB16 /* APToastExampleViewController.m in Sources */,
 				2A920BDD18EDA2FD00C7CEE7 /* APAppDelegate.m in Sources */,
 				2A1F577D190179490024AB16 /* UIView+APToast.m in Sources */,
 				2A1F577B190179490024AB16 /* APToaster.m in Sources */,
@@ -222,14 +218,6 @@
 				2A920BD618EDA2FD00C7CEE7 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2A920BDE18EDA2FD00C7CEE7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A920BDF18EDA2FD00C7CEE7 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

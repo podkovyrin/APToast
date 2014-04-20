@@ -83,7 +83,11 @@
 #pragma mark - Eject
 
 - (void)ap_ejectToast:(NSInteger)toastID {
-    [[APToaster sharedInstance] ejectToastWithID:toastID];
+    [self ap_ejectToast:toastID animated:YES];
+}
+
+- (void)ap_ejectToast:(NSInteger)toastID animated:(BOOL)animated {
+    [[APToaster sharedInstance] ejectToastWithID:toastID animated:animated];
 }
 
 #pragma mark - Text toast view

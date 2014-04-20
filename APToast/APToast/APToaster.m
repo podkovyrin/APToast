@@ -55,6 +55,8 @@ static NSTimeInterval _apToasterAnimationDuration = 0.2f;
     toast.completionBlock = completion;
     
     if (!self.toasts.count) {
+        // toast queue empty, start it immediately
+        //
         [self showToast:toast];
     }
     
@@ -63,7 +65,9 @@ static NSTimeInterval _apToasterAnimationDuration = 0.2f;
     return toast.toastID;
 }
 
-- (void)ejectToastWithID:(NSInteger)toastID {
+- (void)ejectToastWithID:(NSInteger)toastID animated:(BOOL)animated {
+    // find toast by ID
+    //
     APToast *toastToEject = nil;
     for (APToast *toast in self.toasts) {
         if (toast.toastID == toastID) {
@@ -72,9 +76,20 @@ static NSTimeInterval _apToasterAnimationDuration = 0.2f;
         }
     }
     
-    if (toastToEject && [toastToEject isActive]) {
-        [toastToEject stopToasting];
-        [self hideToast:toastToEject];
+    if (toastToEject) {
+        // check if toast has started
+        if ([toastToEject isStarted]) {
+            // dismiss toast if its toasting (timer in progress).
+            // otherwise toast is hiding now -> do nothing
+            //
+            if ([toastToEject isActive]) {
+                [toastToEject stopToasting];
+                [self hideToast:toastToEject animated:animated];
+            }
+        } else {
+            // toast in queue, hide without animation
+            [self hideToast:toastToEject animated:NO];
+        }
     }
 }
 
@@ -82,7 +97,7 @@ static NSTimeInterval _apToasterAnimationDuration = 0.2f;
 
 - (void)showToast:(APToast *)toast {
     if (!toast.parentView) {
-        [self completeToast:toast];
+        [self.toasts removeObject:toast];
     }
     
     [toast addTapToCompleteIfNeeded];
@@ -100,35 +115,44 @@ static NSTimeInterval _apToasterAnimationDuration = 0.2f;
                      }];
 }
 
-- (void)hideToast:(APToast *)toast {
-    [UIView animateWithDuration:_apToasterAnimationDuration
-                          delay:0.f
-                        options:UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionBeginFromCurrentState
-                     animations:^{
-                         toast.toastView.alpha = 0.f;
-                     } completion:^(BOOL finished) {
-                         [toast.toastView removeFromSuperview];
-                         
-                         if (toast.completionBlock) {
-                             toast.completionBlock();
-                         }
-                        
-                         [self completeToast:toast];
-                     }];
-}
-
-- (void)completeToast:(APToast *)toast {
+- (void)hideToast:(APToast *)toast animated:(BOOL)animated {
     [self.toasts removeObject:toast];
     
+    void (^hideToastCompletion)(BOOL) = ^(BOOL finished) {
+        [toast.toastView removeFromSuperview];
+        
+        if (toast.completionBlock) {
+            toast.completionBlock();
+        }
+        
+        [self showNextToast];
+    };
+    
+    if (animated) {
+        [UIView animateWithDuration:_apToasterAnimationDuration
+                              delay:0.f
+                            options:UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionBeginFromCurrentState
+                         animations:^{
+                             toast.toastView.alpha = 0.f;
+                         } completion:hideToastCompletion];
+    } else {
+        hideToastCompletion(NO);
+    }
+}
+
+- (void)showNextToast {
     if (self.toasts.count) {
-        [self showToast:self.toasts.firstObject];
+        APToast *nextToast = self.toasts.firstObject;
+        if (![nextToast isStarted]) {
+            [self showToast:nextToast];
+        }
     }
 }
 
 #pragma mark - APToastDelegate
 
 - (void)toastDidFinished:(APToast *)toast {
-    [self hideToast:toast];
+    [self hideToast:toast animated:YES];
 }
 
 #pragma mark - Constants
