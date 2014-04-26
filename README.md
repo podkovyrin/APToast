@@ -1,3 +1,7 @@
+<p align="center" >
+<img src="https://raw.github.com/podkovyrin/APToast/aptoast_icon.png" alt="APToast" title="APToast">
+</p>
+
 # APToast
 
 ## A UIView category to provide rich toast notifications.
