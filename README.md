@@ -1,5 +1,5 @@
 <p align="center" >
-<img src="https://raw.github.com/podkovyrin/APToast/aptoast_icon.png" alt="APToast" title="APToast">
+<img src="https://raw.github.com/podkovyrin/APToast/master/aptoast_icon.png" alt="APToast" title="APToast">
 </p>
 
 # APToast
