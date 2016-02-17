@@ -27,7 +27,7 @@ APToast can display one or more toast notifications queued one by one. Toasts ca
 pod 'APToast'
 ```
  - **Manual:**
-Copy `APToast/APToast` folder anywhere to your project and add it to XCode.
+Copy `APToast/APToast` folder anywhere to your project and add it to Xcode.
 
 ##Sample
 
