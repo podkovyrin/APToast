@@ -63,7 +63,7 @@ typedef NS_ENUM(NSInteger, APToastPosition) {
  *
  *  @return Unique auto-generated `toastID`, which can be used to force early completion toasting or `NSNotFound` (if toast not queued due to incorrect parameters)
  */
-- (NSInteger)ap_makeToast:(NSString *)toastText duration:(NSTimeInterval)duration position:(APToastPosition)position completion:(void (^)())completion;
+- (NSInteger)ap_makeToast:(NSString *)toastText duration:(NSTimeInterval)duration position:(APToastPosition)position completion:(void (^)(void))completion;
 
 /**
  *  Make simple toast with `toastText`.
@@ -80,7 +80,7 @@ typedef NS_ENUM(NSInteger, APToastPosition) {
                  duration:(NSTimeInterval)duration
                    center:(CGPoint)center
             tapToComplete:(BOOL)tapToComplete
-               completion:(void (^)())completion;
+               completion:(void (^)(void))completion;
 
 ///------------------------------------------------
 /// @name Make custom view toast
@@ -136,7 +136,7 @@ typedef NS_ENUM(NSInteger, APToastPosition) {
                      duration:(NSTimeInterval)duration
                        center:(CGPoint)center
                 tapToComplete:(BOOL)tapToComplete
-                   completion:(void (^)())completion;
+                   completion:(void (^)(void))completion;
 
 ///------------------------------------------------
 /// @name Eject toast

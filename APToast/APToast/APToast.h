@@ -41,7 +41,7 @@
 /**
  *  The block to execute when toasting completes
  */
-@property (copy, readwrite, nonatomic) void (^completionBlock)();
+@property (copy, readwrite, nonatomic) void (^completionBlock)(void);
 
 /**
  *  Starts toasting timer
