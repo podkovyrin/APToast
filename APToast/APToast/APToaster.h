@@ -32,7 +32,7 @@
             parentView:(UIView *)parentView
               duration:(NSTimeInterval)duration
          tapToComplete:(BOOL)tapToComplete
-            completion:(void (^)())completion;
+            completion:(void (^)(void))completion;
 
 /**
  *  Ejects `toastView` from toasting queue with the given `toastID`
